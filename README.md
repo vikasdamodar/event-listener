@@ -1,4 +1,4 @@
-# event-listener
+# Email Events
 Get email events from mandrill and display in a template using django websockets
 
 # Requirements
