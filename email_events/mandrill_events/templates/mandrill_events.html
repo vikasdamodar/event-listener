@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>WebSocket</title>
+    <H1>WebSocket</H1>
+  <script>
+    var socket = new WebSocket('ws://localhost:8000/ws/data/');
+
+    socket.onopen = function(event) {
+        var message = {
+            'cache_id': 111
+        };
+        socket.send(JSON.stringify(message));
+    };
+
+    socket.onmessage = function(event) {
+        var data = JSON.parse(event.data);
+        document.write(data.event_data+"<br>");
+    };
+  </script>
+</body>
+</head>
+<body>
+
+</body>
+</html>
