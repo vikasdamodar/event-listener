@@ -39,10 +39,10 @@ class MandrillEventsConsumer(AsyncWebsocketConsumer):
         await self.accept()
 
         while True:
-            # ToDo get message id/ids and fetch from cache
+            # ToDo get message_id/ids
+            # This is sample id
             cache_id = "111"
             data = cache.get(cache_id)
-            print(data, 2222)
             if data:
                 message = json.dumps({'event_data': data})
                 await self.send(text_data=message)
